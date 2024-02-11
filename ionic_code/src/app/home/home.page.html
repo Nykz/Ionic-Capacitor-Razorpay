@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title> RAZORPAY APP </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-loading
+    [isOpen]="isLoading"
+    [animated]="true"
+    spinner="crescent"
+  ></ion-loading>
+
+  <ion-card>
+    <ion-input
+      label="ENTER AMOUNT"
+      labelPlacement="stacked"
+      class="ion-padding-horizontal"
+      placeholder="Enter amount"
+      type="number"
+      [(ngModel)]="amount"
+      debounce="500"
+      #amountInput
+      errorText="* Please enter amount"
+    >
+    <ion-button fill="clear" slot="start" color="primary">
+      <ion-icon slot="icon-only" name="cash-outline"></ion-icon>
+    </ion-button>
+    </ion-input>
+  </ion-card>
+
+  <div class="ion-margin">
+    <ion-button
+      expand="block"
+      [disabled]="!amount || amount <= 0"
+      (click)="payWithRazorpay()"
+      >Pay via Razorpay
+    </ion-button>
+  </div>
+
+  <ion-toast
+    [isOpen]="isToast"
+    [message]="toast?.message"
+    [keyboardClose]="true"
+    [duration]="3000"
+    (didDismiss)="isToast = false"
+    position="bottom"
+    swipeGesture="vertical"
+    [color]="toast?.color"
+  ></ion-toast>
+
+</ion-content>

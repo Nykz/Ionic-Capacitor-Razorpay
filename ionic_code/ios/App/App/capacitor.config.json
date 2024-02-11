@@ -1,0 +1,8 @@
+{
+	"appId": "com.technyks.razorpayTestApp",
+	"appName": "razorpay-app",
+	"webDir": "www",
+	"server": {
+		"androidScheme": "https"
+	}
+}

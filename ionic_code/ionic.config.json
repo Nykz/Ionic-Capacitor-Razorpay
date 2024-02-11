@@ -1,0 +1,7 @@
+{
+  "name": "razorpay-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
